@@ -29,6 +29,23 @@ You will need to switch back to the Tacx (Jungo) drivers before you can use TTS4
 
 This driver package is provided merely for convenience. If you wish, you can install the libusb-win32 driver manually, e.g. using [Zadig](https://zadig.akeo.ie/). Note that the T1942 head unit changes its USB ID after the firmware is loaded, so you might have to do this twice.
 
+## Packaging
+*Note: This is only necessary if you want to modify or repackage the installer. Normal users can skip this section.*
+The driver package is just a standard InfWizard installer with a customized .inf file.
+
+1. Download libusbK from https://sourceforge.net/projects/libusbk/
+2. Run InfWizard
+3. Choose "libusb0" package
+4. Select any device
+5. Select "Client installer"
+6. Create installer
+7. Navigate to the driver package directory
+8. Delete the .inf file and replace with `T19xx.inf`
+9. Download 7z 9.20 (https://sourceforge.net/projects/sevenzip/files/7-Zip/9.20/7za920.zip/download), newer versions will not work
+10. Extract `7za.exe` into driver directory, rename it to `7z.exe`
+11. Run `re-pack-files.cmd`
+12. `InstallDriver.exe` now contains the T19xx installer.
+
 ## License
 
 libusb-win32 is provided under the GNU General Public License version 3. You can find the sources at https://sourceforge.net/projects/libusb-win32/.
