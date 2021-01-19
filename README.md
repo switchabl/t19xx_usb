@@ -31,6 +31,7 @@ This driver package is provided merely for convenience. If you wish, you can ins
 
 ## Packaging
 *Note: This is only necessary if you want to modify or repackage the installer. Normal users can skip this section.*
+
 The driver package is just a standard InfWizard installer with a customized .inf file.
 
 1. Download libusbK from https://sourceforge.net/projects/libusbk/
